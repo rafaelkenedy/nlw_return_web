@@ -24,10 +24,11 @@ export function FeedbackContentStep({ feedbackType, onFeedbackRestartRequested, 
         console.log(screenshot)
 
         setIsSendingFeedback(true)
+
         await api.post('/feedbacks', {
             type: feedbackType,
-            screenshot,
-            comment
+            comment,
+            screenshot
         })
 
         setIsSendingFeedback(false)
